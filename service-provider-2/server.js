@@ -38,7 +38,8 @@ require('./app/routes/routes.js')(app);
 
 // listen for requests
 
-const port = 3002
+const port = args[2]
+
 
 app.listen(port, () => {
     console.log("Server is listening on port ", port);

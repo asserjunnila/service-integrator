@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd service-provider-1 && node server.js 3001\" \" cd service-provider-2 && node server.js 3002 \" \" cd service-integrator && node server.js 3000 \""
+    "dev": "concurrently \"cd service-provider-1 && nodemon server.js 3001\" \" cd service-provider-2 && nodemon server.js 3002 \" \" cd service-integrator && nodemon server.js 3000 \""
   },
   "keywords": [
     "fuckety",
