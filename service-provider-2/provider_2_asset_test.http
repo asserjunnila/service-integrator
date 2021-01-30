@@ -1,0 +1,53 @@
+
+DELETE http://localhost:3001/assets/60154273b086611523228100 HTTP/1.1
+
+###
+
+GET http://localhost:3001/assets HTTP/1.1
+
+
+###
+
+POST http://localhost:3001/assets HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemName": "Jättekul 5G XL",
+    "catalogItemId": "109100",
+    "instanceId": "0400697545",
+    "owner": "Jörgen Jönssön",
+    "user": "Sven Svensson",
+    "bu": "Sweden",
+    "params": "ASD, ASD, ASD, ASD"
+}
+###
+
+POST http://localhost:3001/assets HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemName": "Jättekul 5G XL",
+    "catalogItemId": "109100",
+    "instanceId": "0400697545",
+    "owner": "Többan Skogström",
+    "user": "Peter Forsberg",
+    "bu": "Sweden",
+    "params": "ASD, ASD, ASD, ASD"
+}
+
+###
+
+POST http://localhost:3001/assets HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemName": "Bra 4G M",
+    "catalogItemId": "109200",
+    "instanceId": "0400697544",
+    "owner": "Höffe Tjugo",
+    "user": "Lak Tidtabell",
+    "bu": "Sweden",
+    "params": "ASD, ASD, ASD, ASD"
+}
+
+###

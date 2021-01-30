@@ -1,0 +1,42 @@
+
+DELETE http://localhost:3000/catalog/60154273b086611523228100 HTTP/1.1
+
+###
+
+GET http://localhost:3000/catalog HTTP/1.1
+
+
+###
+
+POST http://localhost:3000/catalog HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemName": "Pro 5G XL",
+    "category": "Mobile connectivity",
+    "catalogItemId": "109222",
+    "description": "Liittymäasiat kunnossa",
+    "bu": "Finland",
+    "price": 5,
+    "discount": 0,
+    "imgUrl": "https://www.telia.fi/dam/jcr:9da943d7-8b60-4d9f-8ccd-598d25f4f69d/Minun-Telia-split-grey-1440x800.jpg",
+    "params": "NMA, ASD, ASD, ASD"
+}
+###
+
+POST http://localhost:3000/catalog HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemName": "Liikkuva 4G M",
+    "category": "Mobile connectivity",
+    "catalogItemId": "109333",
+    "description": "Liittymäasiat kunnossa ihan ok",
+    "bu": "Finland",
+    "price": 3,
+    "discount": 0,
+    "imgUrl": "https://www.telia.fi/dam/jcr:9da943d7-8b60-4d9f-8ccd-598d25f4f69d/Minun-Telia-split-grey-1440x800.jpg",
+    "params": "WTF, ASD, ASD, ASD"
+}
+
+###

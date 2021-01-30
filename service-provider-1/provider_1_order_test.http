@@ -1,0 +1,39 @@
+
+DELETE http://localhost:3000/order/6015594c97d26e1646f39593 HTTP/1.1
+
+###
+
+GET http://localhost:3000/order HTTP/1.1
+
+###
+
+POST http://localhost:3000/order HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemId": "109333",
+    "orderStatus": 1,
+    "costCenter": "1234567890",
+    "customerId": "A2M12345",
+    "user": "Hessu Hopo",
+    "bu": "Finland",
+    "params": ":D"
+}
+###
+
+POST http://localhost:3000/catalog HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemName": "Liikkuva 4G M",
+    "category": "Mobile connectivity",
+    "catalogItemId": "109333",
+    "description": "Liittymäasiat kunnossa ihan ok",
+    "bu": "Finland",
+    "price": 3,
+    "discount": 0,
+    "imgUrl": "https://www.telia.fi/dam/jcr:9da943d7-8b60-4d9f-8ccd-598d25f4f69d/Minun-Telia-split-grey-1440x800.jpg",
+    "params": "WTF, ASD, ASD, ASD"
+}
+
+###

@@ -1,0 +1,5 @@
+/node_modules
+/package-lock.json
+/service-integrator/node_modules
+/service-provider-1/node_modules
+/service-provider-2/node_modules

@@ -1,0 +1,45 @@
+
+DELETE http://localhost:3000/products/60151b6a73924d0cd699f2a1 HTTP/1.1
+
+###
+
+GET http://localhost:3000/assets HTTP/1.1
+
+
+###
+
+
+GET http://localhost:3010/catalog HTTP/1.1
+
+
+###
+
+GET http://localhost:3010/order HTTP/1.1
+
+
+###
+
+POST http://localhost:3010/products HTTP/1.1
+content-type: application/json
+
+{
+    "product": "Test product",
+    "id": "202020",
+    "description": "The first test product",
+    "bu": "FI"
+}
+
+###
+
+POST http://localhost:3010/order HTTP/1.1
+content-type: application/json
+
+{
+    "catalogItemId": "69123123",
+    "orderStatus": 10,
+    "costCenter": "1234567890",
+    "customerId": "A2M12345",
+    "user": "Hessu Mutakylpy",
+    "bu": "SE",
+    "params": ":D"
+}

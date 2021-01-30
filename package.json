@@ -1,0 +1,20 @@
+{
+  "name": "service-integrator",
+  "version": "1.0.0",
+  "description": "PoCing federated API functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd service-provider-1 && node server.js 3001\" \" cd service-provider-2 && node server.js 3002 \" \" cd service-integrator && node server.js 3000 \""
+  },
+  "keywords": [
+    "fuckety",
+    "fuck"
+  ],
+  "author": "Asber",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "is-odd": "^3.0.1"
+  }
+}
