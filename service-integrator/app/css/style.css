@@ -1,0 +1,45 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.page-footer {
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  margin-top: -14vh;
+  
+}
+
+section {
+  height: 96vh;
+  width: 100%;
+}
+
+.second-section {
+  background-image: linear-gradient(45deg,rgb(250, 211, 208) 20%,#bec2fd 100%);
+  
+}
+
+.first-section {
+  background-image: linear-gradient(90deg,rgb(202, 198, 255) 20%,#ffcbcb 100%);
+
+
+}
+
+img {
+  max-width: 100%;
+  overflow: scroll;
+  box-shadow:20px 20px 50px 10px pink;
+  border-radius: 3px;
+}
