@@ -35,7 +35,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     Promise.all(serviceproviders.map(serviceprovider =>
         fetch(serviceprovider.url + 'assets/').then(resp => resp.json())
-    )).then(data => res.send([].concat(...data)))
+    )).then(data => res.send({response: [].concat(...data)}))
     .catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving assets."
