@@ -1,6 +1,5 @@
 const CatalogItem = require('../models/catalogitem.model.js');
 
-// Create and Save a new Note
 exports.create = (req, res) => {
     // Validate request
     //TODO better validation
@@ -10,7 +9,6 @@ exports.create = (req, res) => {
         });
     }
 
-    // Create a catalogItem
     const catalogItem = new CatalogItem({
         catalogItemName: req.body.catalogItemName,
         category: req.body.category,
@@ -23,7 +21,6 @@ exports.create = (req, res) => {
         params: req.body.params,
     });
 
-    // Save catalogItem in the database
     catalogItem.save()
     .then(data => {
         res.send(data);
@@ -34,7 +31,6 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve and return all catalogItems from the database.
 exports.findAll = (req, res) => {
     CatalogItem.find()
     .then(catalogItems => {
@@ -46,7 +42,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single catalogItem with a catalogItemId
 exports.findOne = (req, res) => {
     Product.findById(req.params.catalogItemId)
     .then(catalogItem => {
@@ -68,7 +63,6 @@ exports.findOne = (req, res) => {
     });
 };
 
-// Update a note identified by the noteId in the request
 exports.update = (req, res) => {
     // Validate Request
     //TODO better validation
@@ -78,7 +72,6 @@ exports.update = (req, res) => {
         });
     }
 
-    // Find note and update it with the request body
     CatalogItem.findByIdAndUpdate(req.params.catalogItemId, {
         catalogItemName: req.body.catalogItemName,
         category: req.body.category,
@@ -109,7 +102,6 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a catalogItem with the specified catalogItemId in the request
 exports.delete = (req, res) => {
     CatalogItem.findByIdAndRemove(req.params.catalogItemId)
     .then(catalogItem => {

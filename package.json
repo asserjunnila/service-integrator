@@ -1,12 +1,13 @@
 {
   "name": "service-integrator",
   "version": "1.0.0",
+  "private": "true",
   "description": "PoCing federated API functionality",
   "main": "/service-integrator/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sudo service mongodb start && concurrently \"cd service-provider-1 && nodemon server.js 3001\" \" cd service-provider-2 && nodemon server.js 3002 \" \" cd service-integrator && nodemon server.js 3000 \"",
-    "start": "sudo service mongodb start && cd service-provider-1 && npm i && cd .. && cd service-provider-2 && npm i && cd .. && cd service-integrator && npm i && cd .. && concurrently \"cd service-provider-1 && npm start\" \" cd service-provider-2 && npm start\" \" cd service-integrator && npm start\""
+    "dev": "service mongodb start && concurrently \"cd service-provider-1 && nodemon server.js\" \" cd service-provider-2 && nodemon server.js\" \" cd service-integrator && nodemon server.js\"",
+    "start": "service mongodb start && cd service-provider-1 && npm i && cd .. && cd service-provider-2 && npm i && cd .. && cd service-integrator && npm i && cd .. && concurrently \"cd service-provider-1 && npm start\" \" cd service-provider-2 && npm start\" \" cd service-integrator && npm start\""
   },
   "keywords": [
     "fuckety",

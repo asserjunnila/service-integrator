@@ -5,22 +5,24 @@ const app = express();
 
 const args = process.argv;
 
+const dotenv = require('dotenv');
+dotenv.config({path: './config/.env'});
+
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
 
-const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(dbConfig.url, {
+mongoose.connect(process.env.DB_URL, {
 	useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
-    console.log("Successfully connected to the database");    
+    console.log("Successfully connected to the database", process.env.DB_URL);    
 }).catch(err => {
-    console.log('Could not connect to the database. Exiting now...', err);
+    console.log('Could not connect to the database ${process.env.DB_URL}. Exiting now...', err);
     process.exit();
 });
 
@@ -30,7 +32,7 @@ app.get('/', (req, res) => {
 
 require('./app/routes/routes.js')(app);
 
-const port = args[2]
+const port = args[2] || process.env.PORT
 
 app.listen(port, () => {
     console.log("Server is listening on port ", port);

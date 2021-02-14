@@ -7,6 +7,9 @@ const app = express();
 
 const args = process.argv;
 
+const dotenv = require('dotenv');
+dotenv.config({path: './config/.env'});
+
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
@@ -23,7 +26,7 @@ app.get('/endpoints', function(req, res) {
 
 require('./app/routes/routes.js')(app);
 
-const port = args[2]
+const port = args[2] || process.env.PORT
 
 console.log("Is the port number odd?", isOdd(port))
 

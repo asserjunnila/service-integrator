@@ -1,6 +1,5 @@
 const Order = require('../models/order.model.js');
 
-// Create and Save a new Note
 exports.create = (req, res) => {
     // Validate request
     //TODO better validation
@@ -10,7 +9,6 @@ exports.create = (req, res) => {
         });
     }
 
-    // Create an order
     const order = new Order({
         catalogItemId: req.body.catalogItemId,
         orderStatus: req.body.orderStatus,
@@ -21,7 +19,6 @@ exports.create = (req, res) => {
         params: req.body.params,
     });
 
-    // Save order in the database
     order.save()
     .then(data => {
         res.send(data);
@@ -32,7 +29,6 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve and return all orders from the database.
 exports.findAll = (req, res) => {
     Order.find()
     .then(orders => {
@@ -44,7 +40,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single order with a orderId
 exports.findOne = (req, res) => {
     Order.findById(req.params.orderId)
     .then(order => {
@@ -66,7 +61,6 @@ exports.findOne = (req, res) => {
     });
 };
 
-// Update a note identified by the noteId in the request
 exports.update = (req, res) => {
     // Validate Request
     //TODO better validation
@@ -76,7 +70,6 @@ exports.update = (req, res) => {
         });
     }
 
-    // Find note and update it with the request body
     Order.findByIdAndUpdate(req.params.orderId, {
         catalogItemId: req.body.catalogItemId,
         orderStatus: req.body.orderStatus,
@@ -105,7 +98,6 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a catalogItem with the specified catalogItemId in the request
 exports.delete = (req, res) => {
     Order.findByIdAndRemove(req.params.orderId)
     .then(order => {

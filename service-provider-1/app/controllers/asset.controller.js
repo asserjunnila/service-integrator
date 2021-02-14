@@ -1,6 +1,5 @@
 const Asset = require('../models/asset.model.js');
 
-// Create and Save a new asset
 exports.create = (req, res) => {
     // Validate request
     // TODO: rest of the fields
@@ -11,7 +10,6 @@ exports.create = (req, res) => {
         });
     }
 
-    // Create an asset
     const asset = new Asset({
         catalogItemName: req.body.catalogItemName,
         catalogId: req.body.catalogId,
@@ -22,7 +20,6 @@ exports.create = (req, res) => {
         params: req.body.params,
     });
 
-    // Save Note in the database
     asset.save()
     .then(data => {
         res.send(data);
@@ -33,7 +30,6 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve and return all assets from the database.
 exports.findAll = (req, res) => {
     Asset.find()
     .then(assets => {
@@ -45,7 +41,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single note with a noteId
 exports.findOne = (req, res) => {
     Asset.findById(req.params.assetId)
     .then(asset => {
@@ -67,7 +62,6 @@ exports.findOne = (req, res) => {
     });
 };
 
-// Update an asset identified by the assetId in the request
 exports.update = (req, res) => {
     // Validate Request
     if(!req.body.description || !req.body.catalogItemName || !req.body.instanceId || !req.body.owner 
@@ -77,7 +71,6 @@ exports.update = (req, res) => {
         });
     }
 
-    // Find note and update it with the request body
     Asset.findByIdAndUpdate(req.params.assetId, {
         catalogItemName: req.body.catalogItemName,
         catalogId: req.body.catalogId,
@@ -106,7 +99,6 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a note with the specified noteId in the request
 exports.delete = (req, res) => {
     Asset.findByIdAndRemove(req.params.assetId)
     .then(asset => {

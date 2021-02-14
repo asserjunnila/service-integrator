@@ -3,3 +3,7 @@
 /service-integrator/node_modules
 /service-provider-1/node_modules
 /service-provider-2/node_modules
+
+/service-integrator/config/.env
+/service-provider-1/config/.env
+/service-provider-2/config/.env
