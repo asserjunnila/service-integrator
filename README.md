@@ -1,6 +1,6 @@
 # service-integrator
 
-One to two paragraph statement about your product and what it does.
+Proof of concepting a simple aggregation service.
 
 ![](solution.png)
 
