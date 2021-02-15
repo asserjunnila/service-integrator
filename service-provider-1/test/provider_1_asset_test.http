@@ -1,14 +1,14 @@
 
-DELETE http://localhost:3000/assets/60154273b086611523228100 HTTP/1.1
+DELETE http://localhost:3001/assets/60154273b086611523228100 HTTP/1.1
 
 ###
 
-GET http://localhost:3000/assets HTTP/1.1
+GET http://localhost:3001/assets HTTP/1.1
 
 
 ###
 
-POST http://localhost:3000/assets HTTP/1.1
+POST http://localhost:3001/assets HTTP/1.1
 content-type: application/json
 
 {
@@ -22,7 +22,7 @@ content-type: application/json
 }
 ###
 
-POST http://localhost:3000/assets HTTP/1.1
+POST http://localhost:3001/assets HTTP/1.1
 content-type: application/json
 
 {
@@ -37,7 +37,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3000/assets HTTP/1.1
+POST http://localhost:3001/assets HTTP/1.1
 content-type: application/json
 
 {

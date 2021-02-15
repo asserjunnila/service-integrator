@@ -1,5 +1,5 @@
 
-DELETE http://localhost:3001/order/60155b0b534cc5165e6ea1d0 HTTP/1.1
+DELETE http://localhost:3002/order/60155b0b534cc5165e6ea1d0 HTTP/1.1
 
 ###
 
@@ -7,7 +7,7 @@ GET http://localhost:3002/order HTTP/1.1
 
 ###
 
-POST http://localhost:3001/order HTTP/1.1
+POST http://localhost:3002/order HTTP/1.1
 content-type: application/json
 
 {
@@ -21,7 +21,7 @@ content-type: application/json
 }
 ###
 
-POST http://localhost:3001/catalog HTTP/1.1
+POST http://localhost:3002/catalog HTTP/1.1
 content-type: application/json
 
 {
