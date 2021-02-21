@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  service-integrator:
+    build: ./service-integrator
+    ports:
+      - "3000:3000"
+    networks:
+      - overlay
+  service-provider:
+    build: ./service-provider
+    ports:
+      - "3001:3000"
+    networks:
+      - overlay
+    
