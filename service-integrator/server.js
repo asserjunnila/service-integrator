@@ -26,9 +26,7 @@ app.get('/endpoints', function(req, res) {
 
 require('./app/routes/routes.js')(app);
 
-const port = args[2] || process.env.PORT
-
-console.log("Is the port number odd?", isOdd(port))
+const port = 3000 || process.env.PORT
 
 app.listen(port, () => {
     console.log("Server is listening on port ", port);

@@ -1,11 +1,11 @@
 module.exports = [
     {
-        url: 'http://localhost:3001/',
+        url: 'http://service-provider-1:3000/',
         bu: 'FI',
         buFullName: "Finland"
     },
     {
-        url: 'http://localhost:3002/',
+        url: 'http://service-provider-2:3000/',
         bu: 'SE',
         buFullName: "Sweden"
     }

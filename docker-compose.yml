@@ -1,16 +1,29 @@
 version: "3"
-
 services:
   service-integrator:
+    container_name: service-integrator
     build: ./service-integrator
     ports:
       - "3000:3000"
-    networks:
-      - overlay
-  service-provider:
+    depends_on: 
+      - service-provider-1
+      - service-provider-2
+  service-provider-1:
+    container_name: service-provider-1
     build: ./service-provider
     ports:
       - "3001:3000"
-    networks:
-      - overlay
-    
+    depends_on: 
+      - mongodb
+  service-provider-2:
+    container_name: service-provider-2
+    build: ./service-provider
+    ports:
+      - "3002:3000"
+    depends_on: 
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
